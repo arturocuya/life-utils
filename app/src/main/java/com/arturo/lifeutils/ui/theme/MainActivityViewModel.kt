@@ -42,6 +42,13 @@ class MainActivityViewModel : ViewModel() {
         list.add(prepMission)
         _uiState.value = _uiState.value.copy(prepMissions = list.toImmutableList())
     }
+
+    fun reorderMissions(fromIndex: Int, toIndex: Int) {
+        val list = _uiState.value.prepMissions.toMutableList()
+        val item = list.removeAt(fromIndex)
+        list.add(toIndex, item)
+        _uiState.value = _uiState.value.copy(prepMissions = list.toImmutableList())
+    }
 }
 
 

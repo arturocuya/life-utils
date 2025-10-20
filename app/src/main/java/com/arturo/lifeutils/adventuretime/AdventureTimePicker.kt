@@ -20,29 +20,29 @@ fun AdventureTimePicker(
     timeInputState: TimePickerState
 ) {
     TimePickerDialog(
-    title = {
-        TimePickerDialogDefaults.Title(displayMode = TimePickerDisplayMode.Input)
-    },
-    onDismissRequest = { viewModel.showTimeInput(false) },
-    confirmButton = {
-        TextButton(
-            onClick = {
-                val cal = Calendar.getInstance()
-                cal.set(Calendar.HOUR_OF_DAY, timeInputState.hour)
-                cal.set(Calendar.MINUTE, timeInputState.minute)
-                cal.isLenient = false
-                viewModel.updateAdventureTime(cal.time)
+        title = {
+            TimePickerDialogDefaults.Title(displayMode = TimePickerDisplayMode.Input)
+        },
+        onDismissRequest = { viewModel.showTimeInput(false) },
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    val cal = Calendar.getInstance()
+                    cal.set(Calendar.HOUR_OF_DAY, timeInputState.hour)
+                    cal.set(Calendar.MINUTE, timeInputState.minute)
+                    cal.isLenient = false
+                    viewModel.updateAdventureTime(cal.time)
+                }
+            ) {
+                Text("Ok")
             }
-        ) {
-            Text("Ok")
-        }
-    },
-    dismissButton = {
-        TextButton(onClick = {
-            viewModel.showTimeInput(false)
-        }) { Text("Cancel") }
-    },
-    modeToggleButton = {},
+        },
+        dismissButton = {
+            TextButton(onClick = {
+                viewModel.showTimeInput(false)
+            }) { Text("Cancel") }
+        },
+        modeToggleButton = {},
     ) {
         TimeInput(state = timeInputState)
     }
