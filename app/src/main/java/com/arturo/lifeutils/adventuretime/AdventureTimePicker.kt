@@ -9,7 +9,7 @@ import androidx.compose.material3.TimePickerDialogDefaults
 import androidx.compose.material3.TimePickerDisplayMode
 import androidx.compose.material3.TimePickerState
 import androidx.compose.runtime.Composable
-import com.arturo.lifeutils.ui.theme.MainActivityViewModel
+import com.arturo.lifeutils.MainActivityViewModel
 import java.util.Calendar
 
 

@@ -64,8 +64,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.times
 import com.arturo.lifeutils.adventuretime.AdventureTimePicker
-import com.arturo.lifeutils.ui.theme.LifeUtilsTheme
-import com.arturo.lifeutils.ui.theme.MainActivityViewModel
+import com.arturo.lifeutils.MainActivityViewModel
+import com.arturo.lifeutils.ui.theme.AppTheme
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
 import java.text.SimpleDateFormat
@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val state = viewModel.uiState.collectAsState().value
 
-            LifeUtilsTheme {
+            AppTheme {
                 Scaffold(
                     modifier = Modifier
                         .fillMaxSize()
@@ -121,6 +121,7 @@ fun MainScreen(
         modifier = Modifier
             .padding(innerPadding)
             .windowInsetsPadding(WindowInsets.safeContent)
+            .padding(horizontal = 16.dp)
     ) {
         Text(
             text = "What's today's adventure?",

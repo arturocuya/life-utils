@@ -1,4 +1,4 @@
-package com.arturo.lifeutils.ui.theme
+package com.arturo.lifeutils
 
 import androidx.lifecycle.ViewModel
 import kotlinx.collections.immutable.ImmutableList
@@ -50,5 +50,3 @@ class MainActivityViewModel : ViewModel() {
         _uiState.value = _uiState.value.copy(prepMissions = list.toImmutableList())
     }
 }
-
-
